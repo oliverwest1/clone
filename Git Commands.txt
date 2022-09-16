@@ -1,0 +1,174 @@
+ls
+pwd
+git config --global user.name Umer		//For first time install git type this cmd to enter username
+git config --global user.email Umer		//For first time install git type this cmd to enter email
+
+code . 	Open VS code
+
+git init 	To initialize the folder from begining
+
+ls -lart 	Shows all hidden folders in a directory
+
+git status	Shows file status in folder
+
+git add index.htm		To change index.htm from Untracket to Staged area
+
+Press Tab to auto complete file name after entring in(index.htm) insted of full name type
+
+git status (if file name is green its means its staged)
+
+git commit 		//Initial Commit
+after this command Type(Initial commit and press [esc and enter :wq] and press Enter)
+This msg should be show after git commit if not try again git commit cmd
+{$ git commit
+[master (root-commit) 0ec283a] Initial commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index.htm}
+
+git status
+
+touch about.htm [touch cmd create blank files]
+touch about.htm contact.htm home.htm //create multiple files at once
+
+git status
+
+git add -A 		\\ADD all files in git{staged} once
+
+git status
+
+if you delete or modifi files then you must [git add -A] to staged the modified or deleted files
+
+[git commit -m "Added more htmls"] 	\\asa krny se hmain commit krny pr new window pop up b nahi aye ga or hmain esc :wq b nahi likhna pary ga agr ham -m ka use kr k double quote main kuch text likh dain
+
+clear 	//clear terminal
+
+
+before this cmd change something in contact.htm file
+[git checkout contact.htm]	//agrkoi ghalti se aap ki file main kuch changes kr deta hay to aap us file ko agr commit nahi hui to recover kr sakty hain
+
+git commit -f [ye aap ki sari ki sari modified files last commit se match kra de ga agr un main kuch changing hui ho gi to wo last commit k sath un sari files ko owerwritd kr de ga]
+
+git log
+
+git log -p -5 	//agr aap 1000 commit files main se sirf last 5 commit k logs dekhna chaty ho(press q after this cmd for quit) //very usefull
+
+change some syntex in index file to see diffrance
+git diff	//Compare working tree with staging area OR tell diffrance b/w modified and commit file
+
+git add -A
+
+git diff --staged 	//Stagged area ko Last commit k sath compare krny k liye
+
+[git checkout -f] ya phir single file k liye [git checkout index.htm]		working area ko last commit k sath match krny k liye
+
+git commit -a -m "Skip stagged" 		//Skip stagging area and directly commit all files
+
+git log
+
+ls 	//show all files in folder
+
+touch wast.htm
+[git add -A] 	//koi b new file bnany k baad 1 martba toh ye cmd likhni hi pary gi phir hi wo es file ko track kary ga
+
+git rm	//remove file from working area and stagging area
+
+git rm --cached wast.htm //file ko folder se remove nahi kary ga bas stagging area se hata de gi ye cmd OR wo file untracked area main chali jaye gi
+
+git log -p -1 [last file ka lig -1]
+
+git status -s 	//[green M (file stagging area main modified hy) Red M (file working tree main modified hy)]
+
+mkdir logs //create logs folder/directory
+
+.gitignore name wali file k andr ja kr agr hum kisi b file ka naam likh dain toh git us file ko ignore kry ga or track b nahi kry ga [example agr .gitignore file main (mylogs.log) likh dia jaye toh asi kisi b file ko track nhi kry ga
+
+
+*/ye sab .gitignore file main ja kr likny se e git files or folders ko ignore kry ga
+.gitignore file main agr
+*.log //likh diya jaye to sari files jinki extension .log hy wo ignore ho jae gi
+/mylogs.log 	//jaha se tree start ho raha sirf waha pr mojood file ko ignore kry ga kisi folder main pari mylog.log file ko ignore nahi kry ga ye (/slash)
+git add -A
+git status
+.gitignore ka matlab
+* all
+/root directory
+*.cpp ignore all cpp extensions files
+ignore/ 	[ignore folder from root tree]
+
+
+========================================================
+BRANCHES
+=========================================================
+git branch
+git branch feature1 	//add feature1 name branch
+git branch*
+git checkou;t feature1 	//master branch se feature1 branch main switch krny k liye
+git branch		//shows in which branch you are
+git status
+git checkout master	//switch b/w branches
+git status
+git log -p -2		//check status
+git checkout -b flask	//new branch create and auto switch in new branch
+git commit -a -m "Skip stagged" //for directly commit file from red color
+git branch -M main
+git remote add origin https://github.com/oliverwest1/cwh.git
+git remote
+git remote -v
+git push -u origin master
+//if code not push in private repo generate ssh keys... ->Go to the following Link ->https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent -> $ ssh-keygen -t ed25519 -C "your_email@example.com" for UEFI WINDOWS -> $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com" FOR LEGASY WIDOWS
+ssh-keygen -t ed25519 -C "adcs-f18-021@superior.edu.pk"
+Type YES
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+//After this go to ->https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account -> Write Cat before ->cat ~/.ssh/id_ed25519.pub ->After this Copy the Whole Key Generated in terminal the -> go to git/setting/SSH and GPG keys ->New SSH key -> past key here
+git push -u origin master
+After this if you see error go to github go to specific repo click on code and copy SSH key
+git remote set-url origin git@github.com:oliverwest1/cwh.git
+git remote
+git remote -v
+git push -u origin master
+git checkout flask //flask is branch name and if we want flask branch push into github then first go into that branch then push
+git push -u origin flask //-u means next time git push likhny se git wahi pr push kry ga jidr -u laga kr branch name lika ho ga
+git clone https://github.com/techloset/mad-batch1 /virus	//virus is optional for folder name create
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
